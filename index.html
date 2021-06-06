@@ -1,38 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-	<meta name="HandheldFriendly" content="true">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>Note App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Notes App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body onload="checkEdits()">
-	<div class="container">
-	<h1>Simple Note App</h1>
-	<p>Create, save, and edit your notes in this minimalist note-taking app</p>
 
-	<div class="buttons">
-	<button class="save-button" onclick="newElement()">Save</button>
-	<button class="delete-button" onclick="clearElement()">Clear</button>
-	</div>
-	
-	<div id="myDiv" class="new-note">
-		<textarea id="myInput" placeholder="What's on your mind?"></textarea>
-	</div>
+<body>
+<header>
+ <div class="container">
+<h1>Welcome To My Notes App</h1>
+<form>
+<input type="text" class="form-control" id="MyTitle"  placeholder="Enter title">
+<textarea class="form-control" id="addTxt" placeholder="Write note" maxlength="500"></textarea>
+<button class="btn btn-primary" id="addBtn">Add Note</button>
+</form>
+ </div>
+ 
+</header>
+<section>
+<div class="container">
+ <h1>Your Notes</h1>
+  <hr>
+  <div id="notes" class="notes">
+    <div id="note">
+       <p class="note-counter">Note 1</p>
+	   <h3 class="note-title">hello world</h3>
+	   <p class="note-text">some text here</p>
+	   <button class="btn btn-primary" id="addBtn">Delete Note</button>
+	   <button class="btn btn-primary" id="addBtn">Edit Note</button>
+    </div>
+  </div>
+</div>
+</section>
 
-	<div class="notespace">
-	<h3>Saved notes</h3>
-	<div id="emptytext"></div>
-	<div id="update"></div>
-	<ul id="saved-notes" contenteditable="true"></ul>
-	<ul id="myNotes" contenteditable="true">
-	</ul>
-	</div>
-	</div>
 
-<script src="main.js"></script>
 
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAq`VgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
