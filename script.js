@@ -2,9 +2,10 @@ console.log("Welcome to notes app. This is app.js");
 showNotes();
 
 // If user adds a note, add it to the localStorage
-let addBtn = document.getElementById("addBtn");
- let addTxt = document.getElementById("addTxt");
+  let addBtn = document.getElementById("addBtn");
+  let addTxt = document.getElementById("addTxt");
   let title =  document.getElementById("MyTitle");
+  let taskDate = document.getElementById("task-date");
   addBtn.addEventListener("click", function(e) {
 	  let notes = localStorage.getItem("notes");
   if (notes == null) {
@@ -14,12 +15,14 @@ let addBtn = document.getElementById("addBtn");
   }
   let myObj = {
     title: MyTitle.value,
-    text: addTxt.value
+    text: addTxt.value,
+    textone: taskDate.value
   }
   notesObj.push(myObj);
   localStorage.setItem("notes", JSON.stringify(notesObj));
   addTxt.value = "";
   MyTitle.value = "";
+  taskDate.value = "";
 //   console.log(notesObj);
   showNotes();
 });
@@ -37,8 +40,9 @@ function showNotes() {
 	        <p class="note-counter">Note ${index + 1}</p>
              <h3 class="note-title">${element.title}</h3>
              <p class="note-text"> ${element.text}</p>
+             <p class="card-textone">${element.textone}</p>
              <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-primary" id="addBtn">Delete Note</button>
-			 <button id="${index}"onclick="editNote(this.id)" class="btn btn-primary"id="addBtn" >Edit Note</button>
+			        <button id="${index}"onclick="editNote(this.id)" class="btn btn-primary"id="addBtn" >Edit Note</button>
                 </div> `;
   });
   let notesElm = document.getElementById("notes");
