@@ -6,6 +6,7 @@ showNotes();
 let addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", function(e) {
   let addTxt = document.getElementById("addTxt");
+  let taskDate = document.getElementById("task-date");
   let notes = localStorage.getItem("notes");
   if (notes == null) {
     notesObj = [];
@@ -14,14 +15,19 @@ addBtn.addEventListener("click", function(e) {
   }
   let myObj = {
     title: MyTitle.value,
-    text: addTxt.value
+    text: addTxt.value,
+    textone: taskDate.value
   }
   notesObj.push(myObj);
   localStorage.setItem("notes", JSON.stringify(notesObj));
   addTxt.value = "";
-//   console.log(notesObj);
+  taskDate.value = "";
+  console.log(notesObj);
   showNotes();
 });
+
+//Add date
+var $taskDate = $(".task-date").val();
 
 // Function to show elements from localStorage
 function showNotes() {
@@ -38,6 +44,7 @@ function showNotes() {
                     <div class="card-body">
                     <h5 class="card-title">${element.title}</h5>
                     <p class="card-text"> ${element.text}</p>
+                    <p class="card-textone">${element.textone}</p>
                         <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
                     </div>
                 </div>`;
