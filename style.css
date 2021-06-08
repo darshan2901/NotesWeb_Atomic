@@ -3,13 +3,15 @@
 	margin:0;
 }
 body{
-     background:#ffa64d ;
+	background: #FC354C;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #0ABFBC, #FC354C); 
 	 font-size: 24px;
 	 
 }
 
 header h1{
-	font-size: 2.5rem;
+	font-size: 2.5rem; 
 	color:#cc0066;
 	line-height:2;
 }
@@ -42,19 +44,44 @@ section h1{
 	 color:#cc0066;
 	line-height:2;
 }
-.notes{
+.note{
 	width:50rem;
 	padding: 1rem;
-	background-color:coral;
 	border-radius:50px;
-	margin:2rem 0;
+	float: right;
 }
 .note-counter,
 .note-text{
     font-size:1.4rem;
 }
-.note-title
+.note-title{
 	font-size:1.6rem;
 }
+#note{
+	justify-content: space-around;
+	border:0.3px solid;
+	border-radius: 15px;
+	padding: 10px;
+	margin-left: 20px;
+	margin-top: 20px;
+	background-color:lightgreen;
+	float: right;
+}
+.note.orange {
+    background-color: rgb(218, 125, 92);
+    border-color: rgb(182, 93, 60);
+}
 
+.note.blue {
+    background-color: rgb(141, 204, 212);
+    border-color: rgb(85, 160, 170);
+}
 
+.note.green {
+    background-color: #5fad73;
+    border-color: #44826f;
+}
+.note.pink {
+    background-color: #e98ba4;
+    border-color: #c55674;
+}

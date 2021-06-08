@@ -11,7 +11,7 @@ showNotes();
   if (notes == null) {
     notesObj = [];
   } else {
-    notesObj = JSON.parse(notes);
+    notesObj = JSON.parse(notes); 
   }
   let myObj = {
     title: MyTitle.value,
@@ -37,7 +37,7 @@ function showNotes() {
   let html = "";
   notesObj.forEach(function(element, index) {
     html += `<div id="note">
-	        <p class="note-counter">Note ${index + 1}</p>
+
              <h3 class="note-title">${element.title}</h3>
              <p class="note-text"> ${element.text}</p>
              <p class="card-textone">${element.textone}</p>
