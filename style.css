@@ -5,7 +5,7 @@
 body{
 	background: #FC354C;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #0ABFBC, #FC354C); 
+	background: linear-gradient(to right, #de6262, #FFB88C); 
 	 font-size: 24px;
 	 
 }
@@ -64,7 +64,7 @@ section h1{
 	padding: 10px;
 	margin-left: 20px;
 	margin-top: 20px;
-	background-color:lightgreen;
+	background-color:rgb(6, 233, 184);
 	float: right;
 }
 .note.orange {
