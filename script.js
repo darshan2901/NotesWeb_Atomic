@@ -11,6 +11,7 @@ showNotes();
   if (notes == null) {
     notesObj = [];
   } else {
+      
     notesObj = JSON.parse(notes); 
   }
   let myObj = {
@@ -36,8 +37,7 @@ function showNotes() {
   }
   let html = "";
   notesObj.forEach(function(element, index) {
-    html += `<div id="note">
-
+    html += `<div id="note" class="noteCard">
              <h3 class="note-title">${element.title}</h3>
              <p class="note-text"> ${element.text}</p>
              <p class="card-textone">${element.textone}</p>
@@ -89,3 +89,22 @@ function editNote(index) {
     localStorage.setItem("notes", JSON.stringify(notesObj));
     showNotes();
   }
+  let explore = document.getElementById('searchTxt');
+explore.addEventListener("input", function(){
+
+    let inputVal = explore.value.toLowerCase();
+    // console.log('Input event fired!', inputVal);
+    let noteCards = document.getElementsByClassName('noteCard');
+    Array.from(noteCards).forEach(function(element){
+        
+        let cardTxt = element.getElementsByTagName("p")[0].innerText;
+        console.log(cardTxt);
+        if(cardTxt.includes(inputVal)){
+            element.style.display = "block";
+        }
+        else{
+            element.style.display = "none";
+        }
+        // console.log(cardTxt);
+    });
+});
