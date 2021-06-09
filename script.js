@@ -42,7 +42,7 @@ function showNotes() {
              <p class="note-text"> ${element.text}</p>
              <p class="card-textone">${element.textone}</p>
              <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-primary" id="addBtn">Delete Note</button>
-			        <button id="${index}"onclick="editNote(this.id)" class="btn btn-primary"id="addBtn" >Edit Note</button>
+			        <button id="${index}"onclick="editNote(this.id)" class="btn btn-primary" id="addBtn" >Edit Note</button>
                 </div> `;
   });
   let notesElm = document.getElementById("notes");
